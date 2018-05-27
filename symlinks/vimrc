@@ -1,0 +1,89 @@
+
+set nocompatible              " be iMproved, required
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+set t_Co=256
+"set background=dark
+
+set mouse=a
+"if has("mouse_sgr")
+"    set ttymouse=sgr
+"else
+"    set ttymouse=xterm2
+"end
+
+set laststatus=2
+let g:airline_theme='minimalist'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+
+" Spaces & Tabs {{{
+set tabstop=2           " 2 space tab
+"set expandtab           " use spaces for tabs
+set softtabstop=2       " 2 space tab
+set shiftwidth=2
+set modelines=1
+set autoindent
+" }}}
+
+" UI Layout {{{
+set number              " show line numbers
+set showcmd             " show command in bottom bar
+"set cursorline
+"hi CursorLine term=bold cterm=bold guibg=Black30
+set wildmenu
+"set lazyredraw
+"set showmatch           " higlight matching parenthesis
+" }}}
+
+" " Folding {{{
+" "=== folding ===
+" set foldmethod=indent   " fold based on indent level
+" set foldnestmax=10      " max 10 depth
+" set foldenable          " don't fold files by default on open
+" nnoremap <space> za
+" set foldlevelstart=10    " start with fold level of 1
+" " }}}
+
+" Searching {{{
+set ignorecase          " ignore case when searching
+set incsearch           " search as characters are entered
+set hlsearch            " highlight all matches
+" }}}
+
+" отключаем бэкапы и своп-файлы
+set nobackup         " no backup files
+set nowritebackup    " only in case you don't want a backup file while editing
+set noswapfile       " no swap files
+
+set visualbell t_vb=
+set novisualbell  
+
+set enc=utf-8        " utf-8 по дефолту в файлах
+set ls=2             " всегда показываем статусбар
+set incsearch        " инкреминтируемый поиск
+set hlsearch         " подсветка результатов поиска
+set nu               " показывать номера строк
+set scrolloff=5      " 5 строк при скролле за раз
+
+map <F1> :NERDTreeToggle<CR>
+"игноррируемые файлы с расширениями
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']  
+
+set backspace=indent,eol,start
+aunmenu Help.
+let no_buffers_menu=1
+set mousemodel=popup
+
+" Pasting  without inditation
+set pastetoggle=<C-D>
+
+map <C-O> :!<Enter>
+map <C-A> :%y+<Enter>
