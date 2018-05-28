@@ -97,9 +97,15 @@ killall Dock
 # restore $IFS
 IFS=$OLDIFS
 
+git clone --recursive https://github.com/mannyfm/dotfiles ~/.dotfiles
 
 # Synchronize symlinks
-rcup -v -d ~/.dotfiles/symlinks
+rcup -v -d ~/.dotfiles/symlinks -S vim
 
 # Copy fonts
 rsync -av --no-perms ~/.dotfiles/resources/fonts/ ~/Library/Fonts
+
+# Copy templates
+mkdir -p ~/work/template
+rsync -av --no-perms ~/.dotfiles/resources/template ~/work/template
+

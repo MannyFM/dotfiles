@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/m_nny/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -35,7 +35,7 @@ COMPLETION_WAITING_DOTS="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -52,11 +52,8 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(osx brew common-aliases)
 plugins+=(python pip)
 plugins+=(zsh-256color zsh-syntax-highlighting)
-# plugins+=(gem macports pip pod)
 plugins+=(git heroku)
-# plugins+=(zsh-nvm)
 # plugins+=(thefuck)
-# plugins+=(docker)
 
 # User configuration
 
@@ -70,7 +67,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 #if [[ -n $SSH_CONNECTION ]]; then
-#  export EDITOR='vim'
+export EDITOR='vim'
 #else
 #  export EDITOR='mvim'
 #fi
@@ -91,14 +88,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 
-#eval "$(thefuck --alias)"
-# You can use whatever you want as an alias, like for Mondays:
-#eval "$(thefuck --alias FUCK)"
-
+export TERM=xterm-256color
 
 # Base16 Shell
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
+# BASE16_SHELL=$HOME/.config/base16-shell/
+# [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 alias ls='ls -GFp'
 alias la='ls -a'
@@ -106,7 +100,6 @@ alias ll='ls -lh'
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
-#[[ -s /Users/manny/.autojump/etc/profile.d/autojump.sh ]] && source /Users/manny/.autojump/etc/profile.d/autojump.sh
 #autoload -U compinit && compinit -u
 autoload -Uz compinit
 if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
@@ -115,26 +108,10 @@ else
   compinit -C
 fi
 
-export NVM_DIR="/Users/m_nny/.nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-#[[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
-alias loadnvm=". $NVM_DIR/nvm.sh"
+# export NVM_DIR=$HOME/.nvm
+# alias loadnvm=". $NVM_DIR/nvm.sh"
 
 function solve {
-#	if [[$# -eq 0]] ; then
-#		echo 'type folder to store solution'
-#		exit 1
-#	fi
-#	local SOLFOLDER="$1"
-#	if [[! -d $SOLFOLDER ]] then
-#		echo 'directory does not exit. Creating...'
-#		echo `mkdir $SOLFOLDER`
-#	fi
-#	cd $SOLFOLDER
-#	local FILETYPE="cpp"
-#	if [[$# -gt 1]] ; then
-#		$FILETYPE="$2"
-#	fi
 	command mkdir $1 && cd $1 && cp ~/work/template/a.cpp . && vim a.cpp
 }
 
