@@ -18,60 +18,21 @@ then
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-# Make sure we’re using the latest Homebrew
-brew update
+brew install git
 
-# Upgrade any already-installed formulae
-brew tap homebrew/versions
-brew upgrade
+echo "Cloning make dotfiles repo"
+git clone --recursive https://github.com/mannyfm/dotfiles ~/.dotfiles
+cd ~/.dotfiles
 
-apps=(
-	coreutils
-	dockutil
-	git
-	heroku
-	imagemagick
-	mas
-	python@2
-	python3
-	ruby
-	thefuck
-	tmux
-	vim
-	wget
-	zsh
-)
-brew install "${apps[@]}"
+echo "Installing brew, cask, mas programms"
+brew bundle
+
+# Remove outdated versions from the cellar
+brew cleanup
 
 # Make zsh default shell
 which zsh | sudo tee -a /etc/shells
 chsh -s "$(which zsh)"
-
-# Install rcm
-brew install thoughtbot/formulae/rcm
-
-# Install Caskroom
-brew tap homebrew/cask
-
-apps=(
-	atom
-	avast-secureline-vpn
-	flux
-	gitkraken
-	java
-	vlc
-	xld
-)
-brew cask install "${apps[@]}"
-
-apps=(
-	747648890		# Telegram
-	1039633667	# Irvue
-)
-mas install "${storeapps[@]}"
-
-# Remove outdated versions from the cellar
-brew cleanup
 
 # Set Dock items
 OLDIFS=$IFS
@@ -81,11 +42,12 @@ apps=(
 	'Safari'
 	'iTunes'
 	'Telegram'
-	'Utilites/Terminal'
+	'Utilities/Terminal'
 	'GitKraken'
 	'Calculator'
 )
 
+echo "Changing dock"
 dockutil --no-restart --remove all $HOME
 for app in "${apps[@]}"
 do
@@ -97,15 +59,17 @@ killall Dock
 # restore $IFS
 IFS=$OLDIFS
 
-git clone --recursive https://github.com/mannyfm/dotfiles ~/.dotfiles
-
+echo "Linkning dotfiles"
 # Synchronize symlinks
 rcup -v -d ~/.dotfiles/symlinks -S vim
 
+echo "Copying fonts"
 # Copy fonts
 rsync -av --no-perms ~/.dotfiles/resources/fonts/ ~/Library/Fonts
 
+echo "Copying templates"
 # Copy templates
 mkdir -p ~/work/template
 rsync -av --no-perms ~/.dotfiles/resources/template ~/work/template
 
+echo "Done."
