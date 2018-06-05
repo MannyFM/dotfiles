@@ -49,11 +49,16 @@ apps=(
 
 echo "Changing dock"
 dockutil --no-restart --remove all $HOME
+
 for app in "${apps[@]}"
 do
 	echo "Keeping $app in Dock"
 	dockutil --no-restart --add /Applications/$app.app $HOME
 done
+
+dockutil --no-restart --add "~/Documents" --display folder $HOME
+dockutil --no-restart --add "~/Downloads" --display stack $HOME
+
 killall Dock
 
 # restore $IFS
