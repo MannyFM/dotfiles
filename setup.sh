@@ -21,11 +21,14 @@ fi
 brew install git
 
 echo "Cloning make dotfiles repo"
-git clone --recursive https://github.com/mannyfm/dotfiles ~/.dotfiles
+if [ ! -d ~/.dotfiles ]; then
+	git clone --recursive https://github.com/mannyfm/dotfiles ~/.dotfiles
+fi
 cd ~/.dotfiles
+git pull || exit 1
 
 echo "Installing brew, cask, mas programms"
-brew bundle
+brew bundle || exit 1
 
 # Remove outdated versions from the cellar
 brew cleanup
@@ -41,10 +44,13 @@ IFS=''
 apps=(
 	'Safari'
 	'iTunes'
+	'Spotify'
+	'WhatsApp'
 	'Telegram'
 	'Utilities/Terminal'
 	'GitKraken'
 	'Calculator'
+	'Launchpad'
 )
 
 echo "Changing dock"
@@ -56,7 +62,7 @@ do
 	dockutil --no-restart --add /Applications/$app.app $HOME
 done
 
-dockutil --no-restart --add "~/Documents" --display folder $HOME
+dockutil --no-restart --add "~/work" --display folder $HOME
 dockutil --no-restart --add "~/Downloads" --display stack $HOME
 
 killall Dock

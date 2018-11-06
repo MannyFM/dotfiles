@@ -4,6 +4,9 @@
 # compiled python files
 *.pyc
 
+# Intellij IDEA (etc) files
+.idea
+
 # Created by https://www.gitignore.io/api/macos
 
 ### macOS ###

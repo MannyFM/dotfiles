@@ -7,3 +7,6 @@
 [submodule "symlinks/vim/bundle/vim-plist"]
 	path = symlinks/vim/bundle/vim-plist
 	url = https://github.com/darfink/vim-plist
+[submodule "symlinks/vim/bundle/vim-surrond"]
+	path = symlinks/vim/bundle/vim-surrond
+	url = git://github.com/tpope/vim-surround.git
