@@ -6,19 +6,7 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until the script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Install Xcode command line tools
-if xcode-select --install 2> /dev/null; then
-  read -p '? Press [Enter] key when Xcode command line tools are installed...' -r
-fi
-
-# Check for Homebrew and install it if missing
-if test ! $(which brew)
-then
-	echo "Installing Homebrew..."
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
-brew install git
+sudo apt-get install git
 
 echo "Cloning make dotfiles repo"
 if [ ! -d ~/.dotfiles ]; then
@@ -26,61 +14,21 @@ if [ ! -d ~/.dotfiles ]; then
 fi
 cd ~/.dotfiles
 git pull || exit 1
+git checkout jetson
 
-echo "Installing brew, cask, mas programms"
-brew bundle || exit 1
-
+sudo apt install -y vim zsh tmux aria2 wget
 # Remove outdated versions from the cellar
-brew cleanup
+sudo apt-get autoremove -y
 
 # Make zsh default shell
 which zsh | sudo tee -a /etc/shells
 chsh -s "$(which zsh)"
 
-# Set Dock items
-OLDIFS=$IFS
-IFS=''
-
-apps=(
-	'Safari'
-	'iTunes'
-	'Spotify'
-	'WhatsApp'
-	'Telegram'
-	'Utilities/Terminal'
-	'GitKraken'
-	'Calculator'
-	'Launchpad'
-)
-
-echo "Changing dock"
-dockutil --no-restart --remove all $HOME
-
-for app in "${apps[@]}"
-do
-	echo "Keeping $app in Dock"
-	dockutil --no-restart --add /Applications/$app.app $HOME
-done
-
-dockutil --no-restart --add "~/work" --display folder $HOME
-dockutil --no-restart --add "~/Downloads" --display stack $HOME
-
-killall Dock
-
-# restore $IFS
-IFS=$OLDIFS
+# oh-my-zsh
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 echo "Linkning dotfiles"
 # Synchronize symlinks
 rcup -v -d ~/.dotfiles/symlinks -S vim
-
-echo "Copying fonts"
-# Copy fonts
-rsync -av --no-perms ~/.dotfiles/resources/fonts/ ~/Library/Fonts
-
-echo "Copying templates"
-# Copy templates
-mkdir -p ~/work/template
-rsync -av --no-perms ~/.dotfiles/resources/template ~/work/template
 
 echo "Done."

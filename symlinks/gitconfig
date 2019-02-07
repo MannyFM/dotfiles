@@ -15,5 +15,3 @@
 	name = Alibek Manabayev
 	email = Alibek.manabayev@gmail.com
 	github = mannyfm
-[credential]
-	helper = osxkeychain
