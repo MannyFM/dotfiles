@@ -6,6 +6,8 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until the script has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+sudo add-apt-repository -y ppa:martin-frost/thoughtbot-rcm
+sudo apt-get update
 sudo apt-get install git
 
 echo "Cloning make dotfiles repo"
@@ -13,10 +15,11 @@ if [ ! -d ~/.dotfiles ]; then
 	git clone --recursive https://github.com/mannyfm/dotfiles ~/.dotfiles
 fi
 cd ~/.dotfiles
-git pull || exit 1
-git checkout jetson
+# git pull || exit 1
+# git checkout jetson
 
-sudo apt install -y vim zsh tmux aria2 wget
+sudo apt install -y rcm vim zsh tmux aria2 wget
+
 # Remove outdated versions from the cellar
 sudo apt-get autoremove -y
 
