@@ -16,7 +16,7 @@ if [ ! -d ~/.dotfiles ]; then
 fi
 cd ~/.dotfiles
 # git pull || exit 1
-# git checkout jetson
+git checkout jetson
 
 sudo apt install -y rcm vim zsh tmux aria2 wget curl
 
