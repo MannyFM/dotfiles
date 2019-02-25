@@ -18,7 +18,7 @@ cd ~/.dotfiles
 # git pull || exit 1
 # git checkout jetson
 
-sudo apt install -y rcm vim zsh tmux aria2 wget
+sudo apt install -y rcm vim zsh tmux aria2 wget curl
 
 # Remove outdated versions from the cellar
 sudo apt-get autoremove -y
