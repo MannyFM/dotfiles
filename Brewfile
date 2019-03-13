@@ -21,16 +21,10 @@ brew "zsh"
 
 brew "thoughtbot/formulae/rcm"
 
-cask "anaconda"
-cask "atom"
 cask "flux"
-cask "gitkraken"
-cask "java8"
+cask "caskroom/versions/java8"
 cask "osxfuse"
-cask "jetbrains-toolbox"
 
 mas "Irvue", id: 1039633667
 mas "Telegram", id: 747648890
 mas "AdBlock", id: 1402042596
-mas "WhatsApp", id: 1147396723
-mas "Unarchiver", id:425424353

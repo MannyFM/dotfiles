@@ -10,3 +10,6 @@
 [submodule "symlinks/vim/bundle/vim-surrond"]
 	path = symlinks/vim/bundle/vim-surrond
 	url = git://github.com/tpope/vim-surround.git
+[submodule "symlinks/vim/bundle/vim-surround"]
+	path = symlinks/vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround
