@@ -12,11 +12,10 @@ sudo apt-get install git
 
 echo "Cloning make dotfiles repo"
 if [ ! -d ~/.dotfiles ]; then
-	git clone --recursive https://github.com/mannyfm/dotfiles ~/.dotfiles
+	git clone --single-branch --branch jetson --recursive https://github.com/mannyfm/dotfiles ~/.dotfiles
 fi
 cd ~/.dotfiles
-# git pull || exit 1
-git checkout jetson
+git pull || exit 1
 
 sudo apt install -y rcm vim zsh tmux aria2 wget curl
 
@@ -28,7 +27,8 @@ which zsh | sudo tee -a /etc/shells
 chsh -s "$(which zsh)"
 
 # oh-my-zsh
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+git clone https://github.com/supercrabtree/k $ZSH_CUSTOM/plugins/k
 
 echo "Linkning dotfiles"
 # Synchronize symlinks
