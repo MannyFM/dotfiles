@@ -1,3 +1,3 @@
 ```
-	curl -fsSL https://raw.githubusercontent.com/MannyFM/dotfiles/master/setup.sh | sh
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/MannyFM/dotfiles/jetson/setup.sh)"
 ```
