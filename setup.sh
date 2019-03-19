@@ -28,10 +28,10 @@ chsh -s "$(which zsh)"
 
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-git clone https://github.com/supercrabtree/k $ZSH_CUSTOM/plugins/k
 
 echo "Linkning dotfiles"
 # Synchronize symlinks
 rcup -v -d ~/.dotfiles/symlinks -S vim
 
+git clone https://github.com/supercrabtree/k $ZSH_CUSTOM/plugins/k
 echo "Done."
