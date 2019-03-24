@@ -33,5 +33,5 @@ echo "Linkning dotfiles"
 # Synchronize symlinks
 rcup -v -d ~/.dotfiles/symlinks -S vim
 
-git clone https://github.com/supercrabtree/k $ZSH_CUSTOM/plugins/k
+git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/custom/plugins/k
 echo "Done."

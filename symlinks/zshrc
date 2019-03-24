@@ -108,3 +108,4 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 # conda
 # . /home/abacus/miniconda3/etc/profile.d/conda.sh
 
+export PATH=$HOME/.local/bin:$PATH
