@@ -1,15 +1,19 @@
-[submodule "symlinks/vim/bundle/vim-airline"]
-	path = symlinks/vim/bundle/vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule "symlinks/vim/bundle/vim-airline-themes"]
-	path = symlinks/vim/bundle/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
-[submodule "symlinks/vim/bundle/vim-plist"]
-	path = symlinks/vim/bundle/vim-plist
-	url = https://github.com/darfink/vim-plist
 [submodule "symlinks/vim/bundle/vim-surrond"]
 	path = symlinks/vim/bundle/vim-surrond
 	url = git://github.com/tpope/vim-surround.git
+[submodule "symlinks/vim/bundle/vim-airline"]
+	path = symlinks/vim/bundle/vim-airline
+	url = https://github.com/vim-airline/vim-airline
+	branch = master
+[submodule "symlinks/vim/bundle/vim-airline-themes"]
+	path = symlinks/vim/bundle/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
+	branch = master
+[submodule "symlinks/vim/bundle/vim-plist"]
+	path = symlinks/vim/bundle/vim-plist
+	url = https://github.com/darfink/vim-plist
+	branch = master
 [submodule "symlinks/vim/bundle/vim-surround"]
 	path = symlinks/vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround
+	branch = master

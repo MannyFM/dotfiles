@@ -1,80 +1,8 @@
 "*":
-  Hydrogen:
-    gateways: "[{\"name\": \"Compute Engine\", \"options\": {\"baseUrl\": \"http://35.233.187.30:5000\", \"token\": \"8e47426e232dc603ac27d99916978c3f2e573466c4222910\"}}]"
-    startDir: "projectDirOfFile"
-  "atom-beautify":
-    cpp:
-      configPath: "~/.uncrustify.cfg"
-    general:
-      beautifyEntireFileOnSave: false
-    jsx:
-      keep_array_indentation: true
-      keep_function_indentation: true
-      object_curly_spacing: true
-    python:
-      sort_imports: true
-  "atom-slime":
-    lispName: "/usr/local/bin/clisp"
-    slimePath: "/Users/m_nny/work/tools/slime"
-  "autocomplete-plus":
-    confirmCompletion: "enter"
-  "autocomplete-python":
-    useKite: false
-  "base16-syntax":
-    scheme: "Monokai"
-    style: "Dark"
-  "city-lights-ui": {}
   core:
-    customFileTypes:
-      "source.ini": [
-        ".hgrc"
-        ".buckconfig"
-        ".flowconfig"
-      ]
-      "source.json": [
-        "BUCK.autodeps"
-      ]
-      "source.python": [
-        "BUCK"
-      ]
-    disabledPackages: [
-      "language-javascript-jsx"
-    ]
-    packagesWithSnippetsDisabled: [
-      "language-python"
-    ]
     telemetryConsent: "no"
-    themes: [
-      "one-dark-ui"
-      "base16-syntax"
-    ]
   editor: {}
   "exception-reporting":
-    userId: "d85abfc3-84ce-4dcc-aa3b-b8466de1a2a1"
-  fonts:
-    fontFamily: "Mononoki"
-  "git-diff":
-    showIconsInEditorGutter: true
-  "lisp-paredit":
-    strict: false
-  "markdown-preview":
-    useGitHubStyle: true
-  "markdown-writer":
-    fileExtension: ".md"
-    relativeImagePath: true
-    siteEngine: "jekyll"
-  nuclide:
-    "atom-ide-console":
-      fontScale: 0.7
-  "one-dark-ui":
-    stickyHeaders: true
-    tabCloseButton: "Left"
-    tabSizing: "Maximum"
-  pigments:
-    groupPaletteColors: "by file"
-  script:
-    cwdBehavior: "Directory of the script"
-    stopOnRerun: true
-  "tree-view": {}
+    userId: "df024ab3-1b1e-404e-b240-247a01c73446"
   welcome:
     showOnStartup: false

@@ -73,10 +73,6 @@ set hlsearch         " подсветка результатов поиска
 set nu               " показывать номера строк
 set scrolloff=5      " 5 строк при скролле за раз
 
-map <F1> :NERDTreeToggle<CR>
-"игноррируемые файлы с расширениями
-let NERDTreeIgnore=['\~$', '\.pyc$', '\.pyo$', '\.class$', 'pip-log\.txt$', '\.o$']  
-
 set backspace=indent,eol,start
 aunmenu Help.
 let no_buffers_menu=1
@@ -87,3 +83,8 @@ set pastetoggle=<C-D>
 
 map <C-O> :!<Enter>
 map <C-A> :%y+<Enter>
+
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-j> :tabprevious<CR>
+nnoremap <C-k> :tabnext<CR>
