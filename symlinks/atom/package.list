@@ -9,10 +9,10 @@ hydrogen-python@0.0.8
 language-javascript-jsx@0.3.7
 markdown-pdf@2.2.0
 markdown-writer@2.11.5
+multi-cursor@2.1.5
 pdf-view@0.71.0
 pigments@0.40.2
 plist-converter@0.2.0
 react@0.18.0
 script@3.18.1
 tabs-to-spaces@1.0.5
-

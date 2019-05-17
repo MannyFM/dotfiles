@@ -4,7 +4,7 @@
 sudo -v
 
 # Keep-alive: update existing `sudo` time stamp until the script has finished
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+# while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Install Xcode command line tools
 if xcode-select --install 2> /dev/null; then
@@ -34,23 +34,25 @@ brew bundle || exit 1
 brew cleanup
 
 # Make zsh default shell
-which zsh | sudo tee -a /etc/shells
-chsh -s "$(which zsh)"
+# which zsh | sudo tee -a /etc/shells
+# chsh -s "$(which zsh)"
+$ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+git clone https://github.com/supercrabtree/k ~/.oh-my-zsh/custom/plugins/k
 
 # Set Dock items
 OLDIFS=$IFS
 IFS=''
 
 apps=(
-	'Safari'
-	'iTunes'
-	'Spotify'
-	'WhatsApp'
-	'Telegram'
-	'Utilities/Terminal'
-	'GitKraken'
-	'Calculator'
-	'Launchpad'
+  'iTunes'
+  'Telegram'
+  'iTerm'
+  'Launchpad'
+  'Ableton'
+  'Google'
+  'WebStorm'
+  'PyCharm'
+  'Steam'
 )
 
 echo "Changing dock"
@@ -62,7 +64,6 @@ do
 	dockutil --no-restart --add /Applications/$app.app $HOME
 done
 
-dockutil --no-restart --add "~/work" --display folder $HOME
 dockutil --no-restart --add "~/Downloads" --display stack $HOME
 
 killall Dock

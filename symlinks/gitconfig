@@ -1,6 +1,6 @@
 [core]
 	editor = vim
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.cvsignore
 	ignorecase = false
   # Enable parallel I/O for operations like "git diff".
   preloadindex = true
