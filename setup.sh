@@ -36,7 +36,7 @@ brew cleanup
 # Make zsh default shell
 # which zsh | sudo tee -a /etc/shells
 # chsh -s "$(which zsh)"
-$ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 git clone https://github.com/supercrabtree/k ~/.oh-my-zsh/custom/plugins/k
 
 echo "Linkning dotfiles"
