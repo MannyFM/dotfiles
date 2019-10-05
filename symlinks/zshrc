@@ -56,6 +56,9 @@ plugins+=(golang)
 ZSH_TMUX_ITERM2=true
 plugins+=(tmux)
 
+ZSH_TMUX_ITERM2=true
+plugins+=(tmux)
+
 # User configuration
 
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
