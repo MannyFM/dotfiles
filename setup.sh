@@ -39,38 +39,6 @@ brew cleanup
 $ sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 git clone https://github.com/supercrabtree/k ~/.oh-my-zsh/custom/plugins/k
 
-# Set Dock items
-OLDIFS=$IFS
-IFS=''
-
-apps=(
-  'iTunes'
-  'Telegram'
-  'iTerm'
-  'Launchpad'
-  'Ableton'
-  'Google'
-  'WebStorm'
-  'PyCharm'
-  'Steam'
-)
-
-echo "Changing dock"
-dockutil --no-restart --remove all $HOME
-
-for app in "${apps[@]}"
-do
-	echo "Keeping $app in Dock"
-	dockutil --no-restart --add /Applications/$app.app $HOME
-done
-
-dockutil --no-restart --add "~/Downloads" --display stack $HOME
-
-killall Dock
-
-# restore $IFS
-IFS=$OLDIFS
-
 echo "Linkning dotfiles"
 # Synchronize symlinks
 rcup -v -d ~/.dotfiles/symlinks -S vim
@@ -78,10 +46,5 @@ rcup -v -d ~/.dotfiles/symlinks -S vim
 echo "Copying fonts"
 # Copy fonts
 rsync -av --no-perms ~/.dotfiles/resources/fonts/ ~/Library/Fonts
-
-echo "Copying templates"
-# Copy templates
-mkdir -p ~/work/template
-rsync -av --no-perms ~/.dotfiles/resources/template ~/work/template
 
 echo "Done."

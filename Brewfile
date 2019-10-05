@@ -8,11 +8,9 @@ tap "thoughtbot/formulae"
 
 brew "aria2"
 brew "coreutils"
-brew "dockutil"
 brew "git"
 brew "httpie"
 brew "mas"
-brew "mongodb/brew/mongodb-community@4.0"
 brew "node"
 brew "thefuck"
 brew "thoughtbot/formulae/rcm"
@@ -25,11 +23,7 @@ brew "zsh"
 
 cask "anaconda"
 cask "flux"
-cask "gitkraken"
-cask "google-chrome"
 cask "java8"
-cask "osxfuse"
 
-mas "com.betafish.adblock-mac", id: 1402042596
 mas "com.leonspok.osx.Irvue", id: 1039633667
 mas "ru.keepcoder.Telegram", id: 747648890
