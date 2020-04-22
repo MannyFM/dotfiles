@@ -1,3 +1,3 @@
 ```
-	curl -fsSL https://raw.githubusercontent.com/MannyFM/dotfiles/master/setup.sh | sh
+	curl -fsSL https://raw.githubusercontent.com/m-nny/dotfiles/master/setup.sh | sh
 ```

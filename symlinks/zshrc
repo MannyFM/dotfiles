@@ -53,8 +53,7 @@ plugins=(osx python npm yarn)
 plugins+=(k thefuck)
 plugins+=(golang)
 
-ZSH_TMUX_ITERM2=true
-plugins+=(tmux)
+plugins+=(gitignore)
 
 ZSH_TMUX_ITERM2=true
 plugins+=(tmux)
