@@ -12,7 +12,7 @@
 [include]
 	path = ~/.gitconfig.local
 [user]
-	name = Alibek Manabayev
+	name = Alibek
 	email = m-nny@yandex.ru
 	github = m-nny
 	gitlab = m-nny

@@ -49,9 +49,10 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(osx python npm)
+plugins=(python npm)
 plugins+=(k)
 plugins+=(gitignore)
+plugins+=(zsh-nvm docker)
 
 ZSH_TMUX_ITERM2=true
 
@@ -96,3 +97,7 @@ alias ar='aria2c -x16'
 
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+export PATH="$PATH:$HOME/.fake_bin"
+
+if [ -f $HOME/.ludwig/.env ]; then source $HOME/.ludwig/.env; fi
