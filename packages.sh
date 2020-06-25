@@ -3,7 +3,7 @@ sudo apt update
 
 sudo apt install -y aria2 httpie tmux
 sudo apt install -y vim wget curl
-sudo apt install -y zsh rcm
+sudo apt install -y zsh rcm fzf
 
 
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
