@@ -38,6 +38,8 @@ brew cleanup
 # chsh -s "$(which zsh)"
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 git clone https://github.com/supercrabtree/k ~/.oh-my-zsh/custom/plugins/k
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 echo "Linkning dotfiles"
 # Synchronize symlinks

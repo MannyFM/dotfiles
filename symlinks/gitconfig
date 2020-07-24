@@ -13,7 +13,9 @@
 	path = ~/.gitconfig.local
 [user]
 	name = Alibek Manabayev
-	email = m-nny@yandex-team.ru
+	email = m-nny@yandex.ru
 	github = m-nny
 [credential]
 	helper = osxkeychain
+[pull]
+	ff = only
