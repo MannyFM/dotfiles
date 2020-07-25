@@ -1,3 +1,4 @@
+#/usr/bin/sh
 preinstall_darwin() {
     # Install Xcode command line tools
     if xcode-select --install 2> /dev/null; then

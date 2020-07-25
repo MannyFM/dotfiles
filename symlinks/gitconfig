@@ -16,6 +16,5 @@
 	email = m-nny@yandex.ru
 	github = m-nny
 [credential]
-	helper = osxkeychain
 [pull]
 	ff = only
