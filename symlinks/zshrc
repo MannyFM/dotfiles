@@ -51,7 +51,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(python npm yarn docker zsh-nvm)
-plugins+=(fzf k thefuck)
+plugins+=(fzf k)
 plugins+=(gitignore)
 
 ZSH_TMUX_ITERM2=true

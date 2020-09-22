@@ -1,2 +1,1 @@
-sudo apt update
-sudo apt install git
+pamac install git

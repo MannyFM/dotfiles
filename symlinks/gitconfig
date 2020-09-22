@@ -16,5 +16,6 @@
 	email = m-nny@yandex.ru
 	github = m-nny
 [credential]
+	helper = libsecret
 [pull]
 	ff = only
